@@ -1,6 +1,6 @@
-# Título del Proyecto
+# Ground Station Icaro19
 
-_Acá va un párrafo que describa lo que es el proyecto_
+Todos los estos archivos corresponden a software desarrollado para la estación de tierra del proyecto Icaro19 para la competición Cansat 2020. Encontrarás tanto el diseño de la ui en Qt5 como la implementación en Python 3 de la interfaz.
 
 ## Comenzando 🚀
 
