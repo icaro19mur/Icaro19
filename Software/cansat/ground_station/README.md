@@ -1,6 +1,6 @@
 # Ground Station Icaro19
 
-Todos los estos archivos corresponden a software desarrollado para la estación de tierra del proyecto Icaro19 para la competición Cansat 2020. Encontrarás tanto el diseño de la ui en Qt5 como la implementación en Python 3 de la interfaz.
+_Todos los estos archivos corresponden a software desarrollado para la estación de tierra del proyecto Icaro19 para la competición Cansat 2020. Encontrarás tanto el diseño de la ui en Qt5 como la implementación en Python 3 de la interfaz._
 
 ## Comenzando 🚀
 
@@ -11,7 +11,7 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Es necesario tener instalado en su equipo Python 3 y las siguientes librerías:_
 
 ```
 Da un ejemplo
