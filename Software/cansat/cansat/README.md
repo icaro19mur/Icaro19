@@ -1,6 +1,6 @@
 # Cansat Icaro19
 
-_Este archivo corresponde al software que se ejecuta en la unidad cansat, el cual es el encargado de leer la información de los sensores, componer el mensaje con esa información y enviarlo a través de la red LORA.
+_Este archivo corresponde al software que se ejecuta en la unidad cansat, el cual es el encargado de leer la información de los sensores, componer el mensaje con esa información y enviarlo a través de la red LORA._
 
 ## Comenzando 🚀
 
