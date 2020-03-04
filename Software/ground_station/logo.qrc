@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Logo">
+    <file>Recursos/icaro19_logo.png</file>
+  </qresource>
+</RCC>
