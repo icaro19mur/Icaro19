@@ -4,17 +4,17 @@ _Este archivo corresponde al software que se ejecuta en la unidad cansat, el cua
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
-
+_El proyecto se puede desarrollar sobre una Raspberry Pi Zero o 3 B+_
 
 ### Pre-requisitos 📋
 
-_Es necesario tener instalado en su equipo Python 3 y las siguientes librerías:_
+_Es necesario tener instalado en su equipo Python 3 y los siguientes paquetes:_
 
 ```
-Da un ejemplo
+GPIO
+PySerial
+BMP280 # Sensor temperatura y presión
+LSM303d # Sensor acelerómetro
 ```
 
 ### Instalación 🔧
