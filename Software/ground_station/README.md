@@ -4,80 +4,39 @@ _Todos los estos archivos corresponden a software desarrollado para la estación
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
+_El sistema operativo que se ejecuta en la estación de tiera es Manjaro, se puede utilizar cualquier otra distribución de linux, la única diferencia sería la forma de instalar los paquetes necesarios. Es necesario PyQt5 o PySide2 para el desarrollo de interfaces gráficas._
 
 
 ### Pre-requisitos 📋
 
 _Es necesario tener instalado en su equipo Python 3 y las siguientes librerías:_
 
-```
-Da un ejemplo
-```
-
-### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
+_Librerías para desarrollo de entornos gráficos PyQt5_
 
 ```
-Da un ejemplo
+sudo pip3 install pyqt5
 ```
 
-_Y repite_
+_Librerías para mostrar gráficas_
 
 ```
-hasta finalizar
+sudo pip3 install pyqtgraph
 ```
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
+_Es interesante cuando se desarrollan proyectos con interface gráfica con PyQt5 utilizar a aplicación Qt Designer para la parte de diseño, y posteriormente convertir el archivo .ui generado a .py mediante pyuic5.
 
 ```
-Da un ejemplo
+pyuic5 ejemplo_interface.ui > ejemplo_interface.py
 ```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_La interface gráfica se ha desarrollado con PyQt5 y también se ha utilizado la aplicación Qt Designer para el diseño_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+* [PyQt5](https://www.riverbankcomputing.com/software/pyqt/download5) - Librerías gráficas
+* [PySide2](https://maven.apache.org/) - Alternativa a PyQt5
+* [Tutoriales PyQt5](https://www.learnpyqt.com/) - Guia muy completa sobre la utilizacion de PyQt5
 
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
 
 ## Autores ✒️
 
