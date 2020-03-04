@@ -4,11 +4,11 @@ _Este archivo corresponde al software que se ejecuta en la unidad cansat, el cua
 
 ## Comenzando 🚀
 
-_El proyecto se puede desarrollar sobre una Raspberry Pi Zero o 3 B+_
+_El proyecto se puede desarrollar sobre una Raspberry Pi Zero o 3 B+. Los sensores utilizados son el BMP280, LSM303D, SGP30 y VEML6075, todos ellos de Adafruit._
 
 ### Pre-requisitos 📋
 
-_Es necesario tener instalado en su equipo Python 3 y los siguientes paquetes:_
+_Es necesario tener instalado en su equipo Python 3 y las siguientes librerías:_
 
 ```
 GPIO
@@ -19,65 +19,44 @@ LSM303d # Sensor acelerómetro
 
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+_Para instalar los distintos paquetes y sensores debes seguir los siguientes pasos:_
 
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
+_Librería para utilizar puerto GPIO_
 
 ```
-hasta finalizar
+sudo pip3 install RPi.GPIO
+```
+
+_Librería PySerial_
+
+```
+sudo pip3 install pyserial
+```
+
+_Sensor temperatura y presión BMP280_
+
+```
+sudo pip3 install adafruit-circuitpython-bmp280
+```
+
+_Sensor acelerómetro LSM303d_
+
+```
+sudo pip3 install RPi.GPIO
 ```
 
 _Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
 
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
-
-## Construido con 🛠️
+## Enlaces: 🛠️
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
+
+* [BMP280](https://github.com/adafruit/Adafruit_CircuitPython_BMP280) - Sensor BMP280
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 * [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
 
-## Contribuyendo 🖇️
 
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
 
 ## Autores ✒️
 
