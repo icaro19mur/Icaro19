@@ -69,7 +69,7 @@ _Las librerías y ejemplos de uso puedes encontrarlos en los siguientes enlaces:
 * [Sensor BMP280](https://github.com/adafruit/Adafruit_CircuitPython_BMP280) - Temperatura y presión
 * [Sensor LSM303d](https://github.com/adafruit/Adafruit_CircuitPython_LSM303_Accel) - Acelerómetro y magnetómetro
 * [Sensor SGP30](https://github.com/adafruit/Adafruit_CircuitPython_SGP30) - Calidad del aire CO2
-* [Sensor VEML6075](hhttps://github.com/adafruit/Adafruit_CircuitPython_VEML6075) - Radiación ultravioleta UV
+* [Sensor VEML6075](https://github.com/adafruit/Adafruit_CircuitPython_VEML6075) - Radiación ultravioleta UV
 
 
 
