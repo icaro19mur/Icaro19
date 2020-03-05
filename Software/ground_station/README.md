@@ -23,7 +23,7 @@ _Librerías para mostrar gráficas_
 sudo pip3 install pyqtgraph
 ```
 
-_Es interesante cuando se desarrollan proyectos con interface gráfica con PyQt5 utilizar a aplicación Qt Designer para la parte de diseño, y posteriormente convertir el archivo .ui generado a .py mediante pyuic5.
+_Es interesante cuando se desarrollan proyectos con interface gráfica con PyQt5 utilizar a aplicación Qt Designer para la parte de diseño, y posteriormente convertir el archivo .ui generado a .py mediante pyuic5._
 
 ```
 pyuic5 ejemplo_interface.ui > ejemplo_interface.py
