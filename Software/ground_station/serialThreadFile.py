@@ -12,9 +12,19 @@ class serialThreadClass(QThread):
 
     def run(self):
         while True:
-
+            error = 0
             lectura = self.ser.readline()
-            self.mensaje.emit(str(lectura.decode()))  # Pipe con la aplicacion
+
+            try:
+                lectura = lectura.decode()
+            except UnicodeDecodeError:
+                print ("Error de lectura")
+                error = 1
+
+            if not error and lectura[0:3] == "MMM":
+                self.mensaje.emit(str(lectura))  # Pipe con la aplicacion
+            else:
+                print ("Esperando señal")
             print (lectura)
             time.sleep(1)
 
