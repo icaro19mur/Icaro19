@@ -36,11 +36,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.graphicsConfig(self.graphicsPresure, "Sensor Presión", "Presión (hPa)", "Lectura", self.presure_y)
         self.data_line_pres = self.graphicsPresure.plot(self.x, self.presure_y, pen=pen, symbol="+")
 
-
-        self.timer = QtCore.QTimer()
-        self.timer.setInterval(1000)
-        self.timer.timeout.connect(self.update_plot_data)
-        self.timer.start()
+        # No es necesario el timer, utilizamos signal para actualizar
+        #self.timer = QtCore.QTimer()
+        #self.timer.setInterval(1000)
+        #self.timer.timeout.connect(self.update_plot_data)
+        #self.timer.start()
 
     def graphicsConfig(self, graphics,sensor, lbl_y, lbl_x, lista):
         graphics.setYRange(0, 40, padding=0)
@@ -48,8 +48,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         graphics.setTitle(sensor)
         graphics.setLabel('left', lbl_y)
         graphics.setLabel('bottom', lbl_x)
-
-
 
 
     def update_plot_data(self):
@@ -75,13 +73,19 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.lcdPresure.display(float(self.lectura[2]))
         self.lcdAltitude.display(float(self.lectura[3]))
 
-        try: # si no hay lectura desde el cansat agregamos a la lista el valor 0
-            self.temperature_y.append(float(self.lectura[1]))
-            self.presure_y.append(float(self.lectura[2]))
-        except ValueError:
-            print ("Valor erroneo")
-            self.temperature_y.append(0)
-            self.presure_y.append(0)
+        self.temperature_y.append(float(self.lectura[1]))
+        self.presure_y.append(float(self.lectura[2]))
+
+        self.update_plot_data()
+
+        # Eliminar, ya que controlamos que el mensaje llegue correcto desde el proceso de serial
+        #try: # si no hay lectura desde el cansat agregamos a la lista el valor 0
+        #    self.temperature_y.append(float(self.lectura[1]))
+        #    self.presure_y.append(float(self.lectura[2]))
+        #except ValueError:
+        #    print ("Valor erroneo")
+        #    self.temperature_y.append(0)
+        #    self.presure_y.append(0)
 
 
     def plot(self, h, t):
