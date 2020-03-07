@@ -5,6 +5,7 @@ import RPi.GPIO as GPIO
 import serial
 import time
 import sys
+import veml6075
 
 	
 	
@@ -51,7 +52,7 @@ bmp280 = BMP280(i2c_dev=bus)
 
 
 baseline_values = []
-baseline_size = 100
+baseline_size = 26
 
 print("inicializando linea base...")
 for i in range(baseline_size):
@@ -64,6 +65,12 @@ baseline = sum(baseline_values[:-25]) / len(baseline_values[:-25])
 #Inicializar el LSM303D
 lsm = LSM303D(0x1d)
 
+#Inicializar y crear instancia del VEML6075
+uv_sensor = veml6075.VEML6075(i2c_dev=bus)
+uv_sensor.set_shutdown(False)
+uv_sensor.set_high_dynamic_range(False)
+uv_sensor.set_integration_time('100ms')
+
 
 try :
 
@@ -71,6 +78,7 @@ try :
 		print("It's setting P2P mode")
 		ser.write(CFG_REG[1])
 		contador = 0
+		
 	while True :
 				
 		
@@ -90,16 +98,36 @@ try :
 		delay_temp += 1
 				
 		if delay_temp > 10000 :
+			
 			# LEER DATOS
+			print ("Leyendo temperatura...")
 			temperature = bmp280.get_temperature()
+							
+			print ("Leyendo presion...")
 			pressure = bmp280.get_pressure()
+							
+			print ("Leyendo altitud...")
 			altitude = bmp280.get_altitude(qnh=baseline)
+							
+			print ("Leyendo acelerometro...")
 			xyz = lsm.accelerometer()
 			accel = "{:06.2f}:{:06.2f}:{:06.2f}".format(*xyz)
 			
+			print ("Leyendo uv...")
+			uva, uvb = uv_sensor.get_measurements()
+			uv_compl, uv_comp2 = uv_sensor.get_comparitor_readings()
+			uv_indices = uv_sensor.convert_to_index(uva, uvb, uv_compl, uv_comp2)
+		
+				
+			ruv = round(uv_indices[0],2)
+			if ruv < 0:
+				ruv = 0
+				
+						
+			#print('UVA INDEX: {0[0]} UVB INDEX : {0[1]} AVG UV INDEX : {0[2]}\n'.format(uv_indices))
 			
 			#mensaje = str(contador) +" | Temperatura: "+str(round(temperature,2))+" | Presion: "+str(round(pressure,2))+"\r\n"
-			mensaje = str(contador)+ "," + str(round(temperature,2))+","+str(round(pressure,2))+","+ str(round(altitude,2))+","+ accel +"\r\n"
+			mensaje ="MMM" + "," + str(round(temperature,2))+","+str(round(pressure,2))+","+ str(round(altitude,2))+","+ accel + "," + str(ruv)+"\r\n"
 			print(mensaje)
 			
 			ser.write(mensaje.encode())
