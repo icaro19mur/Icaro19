@@ -1,7 +1,7 @@
-# Ground Station Icaro19
+# Icaro19
 
-_Todos los archivos corresponden a software desarrollado para el proyecto Icaro19 dentro de la competición Cansat 2020. 
-Dentro de la carpeta de la carpeta software encontrarás los archivos necesarios tanto para el Cansat como para la estación de tierra._
+_Archivos correspondientes al  desarrollado del proyecto Icaro19 dentro de la competición Cansat 2020. 
+Dentro de la carpeta software encontrarás los archivos necesarios tanto para el Cansat como para la estación de tierra._
 
 
 
