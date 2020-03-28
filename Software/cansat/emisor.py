@@ -8,9 +8,7 @@ import sys
 import veml6075
 
 	
-#SENSOR SGP30 - medidor de calidad de aire
-from sgp30 import SGP30
-
+	
 # SENSOR SMP280 - temperatura y presión
 from bmp280 import BMP280
 
@@ -55,8 +53,6 @@ bmp280 = BMP280(i2c_dev=bus)
 
 baseline_values = []
 baseline_size = 26
-
-
 
 print("inicializando linea base...")
 for i in range(baseline_size):
@@ -117,7 +113,7 @@ try :
 			xyz = lsm.accelerometer()
 			accel = "{:06.2f}:{:06.2f}:{:06.2f}".format(*xyz)
 			
-			print ("Leyendo uv...")
+			print ("Leyendo radiacion uv...")
 			uva, uvb = uv_sensor.get_measurements()
 			uv_compl, uv_comp2 = uv_sensor.get_comparitor_readings()
 			uv_indices = uv_sensor.convert_to_index(uva, uvb, uv_compl, uv_comp2)
