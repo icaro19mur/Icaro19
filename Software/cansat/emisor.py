@@ -8,7 +8,9 @@ import sys
 import veml6075
 
 	
-	
+#SENSOR SGP30 - medidor de calidad de aire
+from sgp30 import SGP30
+
 # SENSOR SMP280 - temperatura y presión
 from bmp280 import BMP280
 
@@ -53,6 +55,8 @@ bmp280 = BMP280(i2c_dev=bus)
 
 baseline_values = []
 baseline_size = 26
+
+
 
 print("inicializando linea base...")
 for i in range(baseline_size):
