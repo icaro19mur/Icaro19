@@ -7,7 +7,11 @@ import time
 import sys
 import veml6075
 
-	
+
+#SENSOR SGP30 - sensor de calidad del aire
+from sgp30 import SGP30
+import time
+import sys
 	
 # SENSOR SMP280 - temperatura y presión
 from bmp280 import BMP280
@@ -70,6 +74,20 @@ uv_sensor = veml6075.VEML6075(i2c_dev=bus)
 uv_sensor.set_shutdown(False)
 uv_sensor.set_high_dynamic_range(False)
 uv_sensor.set_integration_time('100ms')
+
+#Inicialización del sensor de calidad de aire
+print("Sensor warming up, please wait...")
+def crude_progress_bar():
+    sys.stdout.write('.')
+    sys.stdout.flush()
+
+sgp30.start_measurement(crude_progress_bar)
+sys.stdout.write('\n')
+
+while True:
+    result = sgp30.get_air_quality()
+    print(result)
+    time.sleep(1.0)
 
 
 try :
