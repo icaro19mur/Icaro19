@@ -16,6 +16,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         #pg.setConfigOption("foreground", "k") # Descomentar para interface blanca
         self.setupUi(self)
 
+        self.inicializar_uvmeter()
+
         self.lectura = []
 
         self.mySerial = serialThreadClass()
@@ -72,26 +74,38 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.lcdTemperature.display(float(self.lectura[1]))
         self.lcdPresure.display(float(self.lectura[2]))
         self.lcdAltitude.display(float(self.lectura[3]))
+        self.lcdArqppm.display(float(self.lectura[5]))
+        self.lcdArqppb.display(float(self.lectura[6]))
+        self.lcdUV.display(float(self.lectura[7]))
+        self.actualizar_uvmeter(float(self.lectura[7])*10)
 
         self.temperature_y.append(float(self.lectura[1]))
         self.presure_y.append(float(self.lectura[2]))
 
         self.update_plot_data()
 
-        # Eliminar, ya que controlamos que el mensaje llegue correcto desde el proceso de serial
-        #try: # si no hay lectura desde el cansat agregamos a la lista el valor 0
-        #    self.temperature_y.append(float(self.lectura[1]))
-        #    self.presure_y.append(float(self.lectura[2]))
-        #except ValueError:
-        #    print ("Valor erroneo")
-        #    self.temperature_y.append(0)
-        #    self.presure_y.append(0)
 
 
     def plot(self, h, t):
         self.graphicsTemperature.plot(h,t)
         self.graphicsPresure.plot()
 
+    def inicializar_uvmeter(self):
+        self.niveles = {1: self.nivel1, 2: self.nivel2, 3: self.nivel3, 4: self.nivel4, 5: self.nivel5, 6: self.nivel6,
+                        7: self.nivel7
+            , 8: self.nivel8, 9: self.nivel9, 10: self.nivel10, 11: self.nivel11}
+        niv = self.niveles.values()
+
+
+        for n in niv:
+            n.setVisible(False)
+
+    def actualizar_uvmeter(self, valor):
+        for i in range(1, 12):
+            if i <= valor:
+                self.niveles[i].setVisible(True)
+            else:
+                self.niveles[i].setVisible(False)
 
 app = QApplication(sys.argv)
 window = MyWindow()
