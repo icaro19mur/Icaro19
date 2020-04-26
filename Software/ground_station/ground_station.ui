@@ -29,9 +29,11 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(198, 198, 198);
-border-color: rgb(0, 0, 0);
 background-color: rgb(34, 104, 179);</string>
     </property>
     <property name="text">
@@ -100,10 +102,10 @@ background-color: rgb(31, 31, 31);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>1230</x>
-      <y>550</y>
-      <width>101</width>
-      <height>101</height>
+      <x>1270</x>
+      <y>590</y>
+      <width>61</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
@@ -137,8 +139,8 @@ background-color: rgb(31, 31, 31);</string>
    <widget class="QLCDNumber" name="lcdTemperature">
     <property name="geometry">
      <rect>
-      <x>1240</x>
-      <y>20</y>
+      <x>1237</x>
+      <y>30</y>
       <width>64</width>
       <height>23</height>
      </rect>
@@ -151,7 +153,7 @@ background-color: rgb(31, 31, 31);</string>
     <property name="geometry">
      <rect>
       <x>1220</x>
-      <y>70</y>
+      <y>80</y>
       <width>81</width>
       <height>23</height>
      </rect>
@@ -164,7 +166,7 @@ background-color: rgb(31, 31, 31);</string>
     <property name="geometry">
      <rect>
       <x>1240</x>
-      <y>120</y>
+      <y>123</y>
       <width>64</width>
       <height>23</height>
      </rect>
@@ -174,7 +176,7 @@ background-color: rgb(31, 31, 31);</string>
     <property name="geometry">
      <rect>
       <x>1110</x>
-      <y>170</y>
+      <y>162</y>
       <width>70</width>
       <height>23</height>
      </rect>
@@ -184,7 +186,7 @@ background-color: rgb(31, 31, 31);</string>
     <property name="geometry">
      <rect>
       <x>1240</x>
-      <y>220</y>
+      <y>210</y>
       <width>64</width>
       <height>23</height>
      </rect>
@@ -196,8 +198,8 @@ background-color: rgb(31, 31, 31);</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>1000</x>
-      <y>30</y>
+      <x>990</x>
+      <y>40</y>
       <width>131</width>
       <height>16</height>
      </rect>
@@ -212,8 +214,8 @@ background-color: rgb(31, 31, 31);</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>1000</x>
-      <y>80</y>
+      <x>990</x>
+      <y>90</y>
       <width>131</width>
       <height>16</height>
      </rect>
@@ -228,7 +230,7 @@ background-color: rgb(31, 31, 31);</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>1000</x>
+      <x>990</x>
       <y>130</y>
       <width>131</width>
       <height>16</height>
@@ -244,8 +246,8 @@ background-color: rgb(31, 31, 31);</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>1000</x>
-      <y>180</y>
+      <x>990</x>
+      <y>170</y>
       <width>131</width>
       <height>16</height>
      </rect>
@@ -260,8 +262,8 @@ background-color: rgb(31, 31, 31);</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>1000</x>
-      <y>230</y>
+      <x>990</x>
+      <y>220</y>
       <width>171</width>
       <height>16</height>
      </rect>
@@ -277,7 +279,7 @@ background-color: rgb(31, 31, 31);</string>
     <property name="geometry">
      <rect>
       <x>1310</x>
-      <y>80</y>
+      <y>90</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -293,7 +295,7 @@ background-color: rgb(31, 31, 31);</string>
     <property name="geometry">
      <rect>
       <x>1310</x>
-      <y>30</y>
+      <y>40</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -325,7 +327,7 @@ background-color: rgb(31, 31, 31);</string>
     <property name="geometry">
      <rect>
       <x>1180</x>
-      <y>180</y>
+      <y>170</y>
       <width>41</width>
       <height>16</height>
      </rect>
@@ -341,7 +343,7 @@ background-color: rgb(31, 31, 31);</string>
     <property name="geometry">
      <rect>
       <x>1310</x>
-      <y>180</y>
+      <y>170</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -357,7 +359,7 @@ background-color: rgb(31, 31, 31);</string>
     <property name="geometry">
      <rect>
       <x>1240</x>
-      <y>170</y>
+      <y>162</y>
       <width>64</width>
       <height>23</height>
      </rect>
@@ -366,9 +368,9 @@ background-color: rgb(31, 31, 31);</string>
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>1000</x>
-      <y>250</y>
-      <width>301</width>
+      <x>990</x>
+      <y>240</y>
+      <width>311</width>
       <height>31</height>
      </rect>
     </property>
@@ -393,7 +395,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel4" native="true">
      <property name="geometry">
       <rect>
-       <x>84</x>
+       <x>89</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -412,7 +414,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel9" native="true">
      <property name="geometry">
       <rect>
-       <x>224</x>
+       <x>229</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -431,7 +433,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel3" native="true">
      <property name="geometry">
       <rect>
-       <x>56</x>
+       <x>61</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -450,7 +452,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel5" native="true">
      <property name="geometry">
       <rect>
-       <x>112</x>
+       <x>117</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -469,7 +471,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel1" native="true">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>5</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -488,7 +490,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel6" native="true">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>145</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -507,7 +509,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel2" native="true">
      <property name="geometry">
       <rect>
-       <x>28</x>
+       <x>33</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -526,7 +528,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel7" native="true">
      <property name="geometry">
       <rect>
-       <x>168</x>
+       <x>173</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -545,7 +547,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel10" native="true">
      <property name="geometry">
       <rect>
-       <x>252</x>
+       <x>257</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -564,7 +566,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel11" native="true">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>285</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -583,7 +585,7 @@ background-color: rgb(31, 31, 31);</string>
     <widget class="QWidget" name="nivel8" native="true">
      <property name="geometry">
       <rect>
-       <x>196</x>
+       <x>201</x>
        <y>-2</y>
        <width>22</width>
        <height>31</height>
@@ -599,6 +601,251 @@ background-color: rgb(31, 31, 31);</string>
       <string notr="true">background-color: rgb(242, 0, 0);</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QWidget" name="wgt_ground" native="true">
+    <property name="geometry">
+     <rect>
+      <x>793</x>
+      <y>290</y>
+      <width>170</width>
+      <height>170</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(67, 67, 67);
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(79, 46, 0, 255), stop:1 rgba(198, 122, 48, 255));</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>804</x>
+      <y>490</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(140, 255, 78);</string>
+    </property>
+    <property name="text">
+     <string>Roll (X):</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="wgt_sky" native="true">
+    <property name="geometry">
+     <rect>
+      <x>793</x>
+      <y>290</y>
+      <width>170</width>
+      <height>85</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(148, 148, 148);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(46, 72, 121, 255), stop:1 rgba(255, 255, 255, 255));</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>804</x>
+      <y>530</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(140, 255, 78);</string>
+    </property>
+    <property name="text">
+     <string>Pitch (Y):</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>804</x>
+      <y>570</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(140, 255, 78);</string>
+    </property>
+    <property name="text">
+     <string>Yaw (Z):</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdRoll">
+    <property name="geometry">
+     <rect>
+      <x>904</x>
+      <y>480</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="mode">
+     <enum>QLCDNumber::Dec</enum>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdPitch">
+    <property name="geometry">
+     <rect>
+      <x>904</x>
+      <y>520</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="mode">
+     <enum>QLCDNumber::Dec</enum>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdYaw">
+    <property name="geometry">
+     <rect>
+      <x>904</x>
+      <y>560</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="mode">
+     <enum>QLCDNumber::Dec</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_lata">
+    <property name="geometry">
+     <rect>
+      <x>808</x>
+      <y>304</y>
+      <width>142</width>
+      <height>142</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_latitud">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>640</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(140, 255, 78);</string>
+    </property>
+    <property name="text">
+     <string>Longitud:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_latitud_2">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>600</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(140, 255, 78);</string>
+    </property>
+    <property name="text">
+     <string>Latitud:</string>
+    </property>
+   </widget>
+   <widget class="QWebView" name="map">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>290</y>
+      <width>351</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="url">
+     <url>
+      <string>about:blank</string>
+     </url>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdUV_2">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>600</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="mode">
+     <enum>QLCDNumber::Dec</enum>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdUV_3">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>630</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="mode">
+     <enum>QLCDNumber::Dec</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_conexion">
+    <property name="geometry">
+     <rect>
+      <x>809</x>
+      <y>620</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>images/off.png</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_conectado">
+    <property name="geometry">
+     <rect>
+      <x>855</x>
+      <y>627</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Sin conexión</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -626,6 +873,11 @@ background-color: rgb(31, 31, 31);</string>
   </action>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebKitWidgets/QWebView</header>
+  </customwidget>
   <customwidget>
    <class>PlotWidget</class>
    <extends>QGraphicsView</extends>

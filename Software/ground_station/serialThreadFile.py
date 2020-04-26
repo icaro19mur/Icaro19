@@ -5,15 +5,21 @@ import time
 class serialThreadClass(QThread):
     mensaje = pyqtSignal(str)
 
+
     def __init__(self, parent = None):
         super().__init__(parent)
-        self.ser = serial.Serial('/dev/ttyUSB0', 9600)
+        self.ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
         time.sleep(2)
+
 
     def run(self):
         while True:
+
             error = 0
+
+
             lectura = self.ser.readline()
+
 
             try:
                 lectura = lectura.decode()
@@ -25,8 +31,11 @@ class serialThreadClass(QThread):
                 self.mensaje.emit(str(lectura))  # Pipe con la aplicacion
             else:
                 print ("Esperando señal")
-            print (lectura)
-            time.sleep(1)
+                self.mensaje.emit("error")
+
+            time.sleep(0.5)
+
+
 
     def sendSerial(self):
         self.ser.write(b'A')
