@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
@@ -10,9 +11,7 @@ import veml6075
 
 #SENSOR SGP30 - sensor de calidad del aire
 from sgp30 import SGP30
-import time
-import sys
-	
+
 # SENSOR SMP280 - temperatura y presión
 from bmp280 import BMP280
 
@@ -73,9 +72,10 @@ lsm = LSM303D(0x1d)
 uv_sensor = veml6075.VEML6075(i2c_dev=bus)
 uv_sensor.set_shutdown(False)
 uv_sensor.set_high_dynamic_range(False)
-uv_sensor.set_integration_time('100ms')
+uv_sensor.set_integration_time('100ms') #por defecto 100ms
 
 #Inicialización del sensor de calidad de aire
+sgp30 = SGP30()
 print("Sensor warming up, please wait...")
 def crude_progress_bar():
     sys.stdout.write('.')
@@ -83,11 +83,6 @@ def crude_progress_bar():
 
 sgp30.start_measurement(crude_progress_bar)
 sys.stdout.write('\n')
-
-while True:
-    result = sgp30.get_air_quality()
-    print(result)
-    time.sleep(1.0)
 
 
 try :
@@ -115,7 +110,7 @@ try :
 				r_buff = ""
 		delay_temp += 1
 				
-		if delay_temp > 10000 :
+		if delay_temp > 5000 :
 			
 			# LEER DATOS
 			print ("Leyendo temperatura...")
@@ -131,26 +126,36 @@ try :
 			xyz = lsm.accelerometer()
 			accel = "{:06.2f}:{:06.2f}:{:06.2f}".format(*xyz)
 			
+			print ("Leyendo calidad del aire...")
+			airq = sgp30.get_air_quality()
+			print (airq)
+
 			print ("Leyendo radiacion uv...")
 			uva, uvb = uv_sensor.get_measurements()
-			uv_compl, uv_comp2 = uv_sensor.get_comparitor_readings()
-			uv_indices = uv_sensor.convert_to_index(uva, uvb, uv_compl, uv_comp2)
-		
-				
-			ruv = round(uv_indices[0],2)
-			if ruv < 0:
-				ruv = 0
-				
-						
-			#print('UVA INDEX: {0[0]} UVB INDEX : {0[1]} AVG UV INDEX : {0[2]}\n'.format(uv_indices))
+			print ("----> Medidas  tomadas")
+			uv_comp1, uv_comp2 = uv_sensor.get_comparitor_readings()
+			print ("----> Lecturas comparador")
+			uv_indices = uv_sensor.convert_to_index(uva, uvb, uv_comp1, uv_comp2)
+
+			print('UVA : {0} UVB : {1} COMP 1 : {2} COMP 2 : {3}'.format(uva, uvb, uv_comp1, uv_comp2))
+			print('UVA INDEX: {0[0]} UVB INDEX : {0[1]} AVG UV INDEX : {0[2]}\n'.format(uv_indices))
+			
 			
 			#mensaje = str(contador) +" | Temperatura: "+str(round(temperature,2))+" | Presion: "+str(round(pressure,2))+"\r\n"
-			mensaje ="MMM" + "," + str(round(temperature,2))+","+str(round(pressure,2))+","+ str(round(altitude,2))+","+ accel + "," + str(ruv)+"\r\n"
+			mensaje ="MMM" + "," + str(round(temperature,2))+","+str(round(pressure,2))+","+ str(round(altitude,2))+","+ accel + "," + str(airq.equivalent_co2) + "," + str(airq.total_voc) + "," + str(uv_indices[0]) +  "\r\n"
 			print(mensaje)
 			
 			ser.write(mensaje.encode())
 			delay_temp = 0
 			contador += 1
+
+			# Almacenamiento de datos en archivo
+			# Preparamos el mensaje a escribir, indicando al comienzo el numero de lectura
+			# y eleminamos el codigo de verificacion de mensaje MMM
+			with open('data.csv', 'a') as f:
+				mensaje = str(contador)+mensaje[3:]  # Preparacion del mensaje
+				f.writelines(mensaje) # Escritura de la lectura
+
 except :
 	if ser.isOpen() :
 		ser.close()
