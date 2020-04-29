@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
@@ -10,9 +11,7 @@ import veml6075
 
 #SENSOR SGP30 - sensor de calidad del aire
 from sgp30 import SGP30
-import time
-import sys
-	
+
 # SENSOR SMP280 - temperatura y presión
 from bmp280 import BMP280
 
@@ -36,6 +35,7 @@ delay_temp = 1
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(M0,GPIO.OUT)
+GPIO.setup(M1,GPIO.OUT)
 GPIO.setup(M1,GPIO.OUT)
 
 GPIO.output(M0,GPIO.LOW)
