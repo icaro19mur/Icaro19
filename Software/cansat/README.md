@@ -4,7 +4,7 @@ _Este archivo corresponde al software que se ejecuta en la unidad cansat, el cua
 
 ## Comenzando 🚀
 
-_El proyecto se puede desarrollar sobre una Raspberry Pi Zero o 3 B+. Los sensores utilizados son el BMP280, LSM303D, SGP30 y VEML6075, todos ellos de Adafruit._
+_El proyecto se puede desarrollar sobre una Raspberry Pi Zero o 3 B+. Los sensores utilizados son el BMP280, LSM303D, SGP30 y VEML6075, todos ellos de Pimoroni._
 
 ### Pre-requisitos 📋
 
@@ -38,25 +38,25 @@ sudo pip3 install pyserial
 _Sensor temperatura y presión BMP280_
 
 ```
-sudo pip3 install adafruit-circuitpython-bmp280
+sudo pip3 install bmp280
 ```
 
 _Sensor acelerómetro LSM303d_
 
 ```
-pip3 install adafruit-circuitpython-lsm303_accel
+sudo pip3 install lsm303d
 ```
 
 _Sensor CO2 SGP30_
 
 ```
-sudo pip3 install adafruit-circuitpython-sgp30
+sudo pip3 pimoroni-sgp30
 ```
 
 _Sensor UV VEML6075_
 
 ```
-sudo pip3 install adafruit-circuitpython-veml6075
+sudo pip3 install veml6075
 ```
 
 _En el archivo emisor.py puede ver como inicializar y realizar la lectura de datos de los distintos sensores_
